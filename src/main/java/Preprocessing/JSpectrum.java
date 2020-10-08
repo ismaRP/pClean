@@ -425,6 +425,28 @@ public class JSpectrum {
                 doFilterBYfreeWins(byFreeWinLow, byFreeWinHigh, isobaric_tag);
             }
 
+        } else if (method.equals("TMT11plex")) {
+            isobaric_tag = 229.162932;
+            ArrayList<Double> tmt11Reporters = new ArrayList<Double>();
+            tmt11Reporters.add(126.127726);
+            tmt11Reporters.add(127.1247610);
+            tmt11Reporters.add(127.1310809);
+            tmt11Reporters.add(128.1281158);
+            tmt11Reporters.add(128.1344357);
+            tmt11Reporters.add(129.1314706);
+            tmt11Reporters.add(129.1377905);
+            tmt11Reporters.add(130.1348254);
+            tmt11Reporters.add(130.1411453);
+            tmt11Reporters.add(131.1381802);
+            tmt11Reporters.add(131.1444999);
+            if (labelFilter) {
+                doFilterLabelAssociatedIons(tmt11Reporters, isobaric_tag, removeRep);
+            }
+            if (byFreeWinLow || byFreeWinHigh) {
+                doFilterBYfreeWins(byFreeWinLow, byFreeWinHigh, isobaric_tag);
+            }
+
+
         } else {
             System.out.println("Please check out the proper setting for labeling method.");
 
